@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>XFCE4</title><style>.swal2-title{font-size:1.25rem!important}.swal2-actions{flex-direction:column}.swal2-styled.swal2-cancel,.swal2-styled.swal2-confirm{width:100px}</style></head><body><script src="./axios.min.js"></script><script src="./sweetalert2.all.min.js"></script><script>var VNCURL = "http://" + window.location.hostname + ":6080/vnc.html";
+      var hostname = window.location.hostname;
+      function runCmd(cmd, type) {
+        axios({
+          method: "post",
+          url: "/launchapp",
+          baseURL: "http://" + window.location.hostname + ":8000",
+          data: { cmd: cmd, path: "success" }
+        })
+          .then(function (res) {
+            if (res.data) {
+              if (type == "wayland") {
+                var index = window.parent.layer.getFrameIndex(window.name);
+                window.parent.Aid._closeWin(index);
+              } else if (type == "vnc") {
+                setTimeout(function () {
+                  window.location.href = VNCURL;
+                }, 1500);
+              }
+            }
+          })
+          .catch(function (err) {
+            console.log(err);
+          });
+      }
+      if (
+        hostname === "127.0.0.1" ||
+        hostname === "localhost" ||
+        hostname === "0.0.0.0"
+      ) {
+        Swal.fire({
+          title: "请选择显示方式",
+          width: "24rem",
+          backdrop: false,
+          focusConfirm: false,
+          showCancelButton: true,
+          confirmButtonColor: "#febb2c",
+          confirmButtonText: "Wayland",
+          cancelButtonColor: "#2e7fe7",
+          cancelButtonText: "VNC"
+        }).then((result) => {
+          if (result.isConfirmed) {
+            runCmd("/root/.SW", "wayland");
+          }
+          if (result.isDismissed && result.dismiss === "cancel") {
+            runCmd("/root/.SV", "vnc");
+          }
+        });
+      } else {
+        runCmd("/root/.SV", "vnc");
+      }</script></body></html>

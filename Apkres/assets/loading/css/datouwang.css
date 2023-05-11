@@ -1,0 +1,42 @@
+/* DaTouWang URL: www.datouwang.com */
+
+body {
+/* 	background-color: #3D4852; */
+ 	display: flex; 
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	overflow-x: hidden; overflow-y: hidden;
+}
+
+/* div{ float:center}  */
+
+.container1 {
+    
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	height: 80px;
+	width: 80px;
+/* 	margin:0 auto */
+
+
+}
+
+.radial {
+	position: absolute;
+	height: 10px;
+	width: 30px;
+	border-radius: 5px;
+	background-color: #606F7B;
+	left: -1px;
+	transform: rotate(0deg);
+	transform-origin: 45px;
+	transition:background 1s, box-shadow 1s;
+}
+
+.glow{
+	background: #51D88A;
+	box-shadow: 0 0 25px 2px #A2F5BF;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>show the log</title>
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+<script>
+	String.prototype.getValue= function(parm) {  
+		var reg = new RegExp("(^|&)"+ parm +"=([^&]*)(&|$)");  
+		var r = this.substr(this.indexOf("\?")+1).match(reg);  
+		if (r!=null) return unescape(r[2]); return null;  
+	} 
+	
+	function init(){
+		var url = window.location.href;
+		if(url.getValue('key') == null){
+
+		}else{
+
+            window.location.href = url.getValue('key');
+		}
+	}
+</script>
+</head>
+<body onload="init();">
+<div class="innerwrap green">
+    <div class="iconholder">
+<a href="http://127.0.0.1:9999/gui.php" ><img src="logo_round.png" width=100 height=100 ></a><br><h3></h3>
+
+<script >
+
+   var url = window.location.href;
+   var title='show the log...'
+   document.write("<a href="+url.getValue('key')+" >"+title+"</a><br><h3></h3>");
+
+</script>
+
+        <span class="svg-icon flat-line" id="shadow-clock"></span>
+        <span class="svg-icon flat-line" id="shadow-coffee"></span>
+        <span class="svg-icon flat-line" id="shadow-diamond"></span>
+        <span class="svg-icon flat-line" id="line-disk"></span>
+        <span class="svg-icon flat-line" id="line-email"></span>
+        <span class="svg-icon flat-line" id="line-film"></span>
+        <span class="svg-icon flat-line" id="line-flag"></span>
+        <span class="svg-icon flat-line" id="line-folder"></span>
+        <span class="svg-icon flat-line" id="line-graph"></span>
+        <span class="svg-icon flat-line" id="line-heart"></span>
+        <span class="svg-icon flat-line" id="line-home"></span>
+        <span class="svg-icon flat-line" id="line-lightning"></span>
+        <span class="svg-icon flat-line" id="line-location"></span>
+        <span class="svg-icon flat-line" id="line-lock"></span>
+        <span class="svg-icon flat-line" id="line-magnify"></span>
+        <span class="svg-icon flat-line" id="line-message"></span>
+        <span class="svg-icon flat-line" id="line-mic"></span>
+        <span class="svg-icon flat-line" id="line-paper"></span>
+        <span class="svg-icon flat-line" id="line-pencil"></span>
+        <span class="svg-icon flat-line" id="line-phone"></span>
+        <span class="svg-icon flat-line" id="line-picture"></span>
+        <span class="svg-icon flat-line" id="line-plane"></span>
+
+        <span class="svg-icon flat-line" id="line-screen"></span>
+        <span class="svg-icon flat-line" id="line-settings"></span>
+
+        <span class="svg-icon flat-line" id="line-storm"></span>
+        <span class="svg-icon flat-line" id="line-suitcase"></span>
+        <span class="svg-icon flat-line" id="line-tag"></span>
+
+        <span class="svg-icon flat-line" id="line-thumbsup"></span>
+        <span class="svg-icon flat-line" id="line-trash"></span>
+        <span class="svg-icon flat-line" id="shadow-brush"></span>
+
+        <span class="svg-icon flat-line" id="shadow-browser"></span>
+
+    </div><!-- IconHolder End-->
+</div><!--iconholder End-->
+
+</body>
+</html>

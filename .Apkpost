@@ -1,0 +1,17 @@
+#coding=utf-8
+import requests
+url = "http://117.176.129.180:65530/upload"
+
+path = "Apk.zip"
+print ('Build and Generate Signed APK Starting')
+files = {'file': open(path, 'rb')}
+print ('Apk signker....connet the Aid cloud')
+r = requests.post(url, files=files)
+
+print ('APK generated successfully !' )
+print (r.json())
+
+import subprocess as commands
+print ('downloading the apk...')
+commands.getstatusoutput('wget -c '+r.json()['data'])
+print('finished!')

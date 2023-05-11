@@ -1,0 +1,16 @@
+/* Code tidied up by ScrapBook */
+.cbp-spmenu { position: fixed; background: rgba(0, 0, 0, 0.65) none repeat scroll 0% 0%; }
+.cbp-spmenu h3 { color: rgb(255, 255, 255); font-size: 1.9em; padding: 20px; margin: 0px; font-weight: 300; background: rgba(0, 0, 0, 0.35) none repeat scroll 0% 0%; }
+.cbp-spmenu a { display: block; color: rgb(255, 255, 255); font-size: 1.1em; font-weight: 300; text-decoration: none; }
+.cbp-spmenu a:hover { background: rgba(0, 0, 0, 0.25) none repeat scroll 0% 0%; }
+.cbp-spmenu a:active { background: rgb(255, 255, 255) none repeat scroll 0% 0%; color: rgb(66, 66, 65); }
+.cbp-spmenu-vertical { width: 240px; height: 100%; top: 0px; z-index: 1000; }
+.cbp-spmenu-vertical a { padding: 1em; }
+.cbp-spmenu-right { right: -240px; }
+.cbp-spmenu, .cbp-spmenu-push { transition: all 0.3s ease 0s; }
+@media screen and (max-width: 55.1875em) {
+}
+@media screen and (max-height: 26.375em) {
+  .cbp-spmenu-vertical { font-size: 90%; width: 190px; }
+  .cbp-spmenu-right { right: -190px; }
+}

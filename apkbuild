@@ -1,0 +1,8 @@
+rm *.zip
+cd /home/Apkres
+zip -r Apkres.zip ic_launcher-web.png assets res;
+mv Apkres.zip ../
+cd ../
+zip -r Apkexe.zip .e.sh $@
+zip Apk.zip Apkres.zip Apkexe.zip
+python .Apkpost
